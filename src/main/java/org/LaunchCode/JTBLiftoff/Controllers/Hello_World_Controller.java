@@ -3,16 +3,20 @@ package org.LaunchCode.JTBLiftoff.Controllers;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import static java.lang.System.*;
 
-@Controller
+@RestController
 public class Hello_World_Controller {
 
-    @GetMapping
-    @ResponseBody
+    @GetMapping("/")
     public String hello() {
-        return "Hello World";
+        return "hello world";
     }
 
+    @GetMapping("/restricted")
+    public String restricted() {
+        return "You are logged in.";
+    }
 }
