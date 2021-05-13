@@ -10,9 +10,9 @@ import static java.lang.System.*;
 @RestController
 public class Hello_World_Controller {
 
-    @GetMapping("/")
+    @GetMapping("/hello")
     public String hello() {
-        return "hello world";
+        return "Hello World! Welcome!";
     }
 
     @GetMapping("/restricted")

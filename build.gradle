@@ -24,19 +24,26 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
-	implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
+	implementation 'org.apache.httpcomponents:httpclient'
+	//implementation 'org.jbundle.util.osgi.wrapped:org.jbundle.util.osgi.wrapped.org.apache.http.client:4.1.2'
+	//implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
 	//implementation 'org.springframework.boot:spring-boot-starter-oauth2-resource-server'
 	//implementation 'com.okta.spring:okta-spring-boot-starter:2.0.1'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
+	compile 'com.googlecode.json-simple:json-simple:1.1.1'
 	compile 'org.springframework.boot:spring-boot-starter-data-jpa'
 	compile 'mysql:mysql-connector-java'
+	compile 'org.apache.httpcomponents:httpcore:4.4.1'
+	compile 'org.apache.httpcomponents:httpclient:4.3.5'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.springframework.security:spring-security-test'
 }
 
+
 test {
 	useJUnitPlatform()
 }
+
