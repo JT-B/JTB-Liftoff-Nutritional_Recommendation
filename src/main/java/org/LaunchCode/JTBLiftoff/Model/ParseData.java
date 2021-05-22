@@ -6,6 +6,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Scanner;
 
+import org.json.simple.JSONObject;
 import org.json.simple.parser.*;
 
 public class ParseData {
@@ -13,7 +14,7 @@ public class ParseData {
  public static void main(String[] args) {
 
   try {
-   URL url = new URL("https://api.edamam.com/api/food-database/v2/parser");
+   URL url = new URL("https://api.edamam.com/api/food-database/v2/parser?ingr=hulled%20barley&app_id=6558ef1a&app_key=076610da98e992b84c57d7740a258a0d \t");
    HttpURLConnection conn = (HttpURLConnection) url.openConnection();
    conn.setRequestMethod("GET");
    conn.connect();
@@ -32,11 +33,18 @@ public class ParseData {
     System.out.println("\nJSON data in a string format");
     System.out.println(inline);
     sc.close();
-   }
 
-  } catch (Exception e) {
-   e.printStackTrace();
-  }
+
+//    JSONParser parse = new JSONParser();
+//    JSONObject data_obj = (JSONObject) parse.parse(inline);
+//
+//    JSONObject obj = (JSONObject) data_obj.get("hulled barley");
+//    System.out.println(obj.get("nutrients"));
+
+    }
+   } catch(Exception e){
+    e.printStackTrace();
+   }
 
  }
 }
