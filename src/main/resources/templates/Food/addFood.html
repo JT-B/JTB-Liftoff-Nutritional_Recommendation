@@ -5,9 +5,12 @@
     <title></title>
 </head>
 <body>
-<form>
-    <label>Enter Food <input name="Food" type="text" /></label>
+
+<form method="post">
+    <label>Enter Food</label>
+    <input name="Food" th:field="${foodName}" />
     <button>Submit</button>
 </form>
+
 </body>
 </html>
